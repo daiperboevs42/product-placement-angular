@@ -7,7 +7,10 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductDetailsComponent } from './Products/product-details/product-details.component';
-import { ProductsAddComponent } from './products/products-add/products-add.component';
+import { ProductAddComponent } from './Products/product-add/product-add.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { ProductUpdateComponent } from './Products/product-update/product-update.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { ProductsAddComponent } from './products/products-add/products-add.compo
     NavbarComponent,
     LandingPageComponent,
     ProductDetailsComponent,
-    ProductsAddComponent
+    ProductAddComponent,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

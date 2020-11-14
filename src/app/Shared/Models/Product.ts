@@ -5,7 +5,7 @@ export class Product{
   id: number;
   name: string;
   price: number;
-  color: Color;
+  // color: Color;
   // producttype: ProductType;
   // createddate: Date;
 }

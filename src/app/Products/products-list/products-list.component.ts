@@ -13,10 +13,18 @@ export class ProductsListComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.refresh();
   }
-  addProduct(){
-    // this.productService.addProduct();
+  refresh(): void{
+    this.productService.getProducts()
+      .subscribe(listOfProducts => {this.products = listOfProducts; });
   }
 
+  delete(id: number): void{
+    this.productService.deleteProduct(id).subscribe(message => {
+      console.log('Deleted User, Message Received: ' + message);
+      this.refresh();
+    });
+    // this.products = this.productService.getProducts();
+  }
 }
